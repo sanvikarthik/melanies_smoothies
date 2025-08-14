@@ -43,6 +43,6 @@ VALUES ('{ingredients_string}', '{name_on_order}')
 # New section to display smoothiefroot nutrition information 
 import requests
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-#st.text(smoothiefroot_response.json())
-df = pd.DataFrame(smoothiefroot_response.json())
-st.dataframe(df, use_container_width=True)
+st.text(smoothiefroot_response.json())
+st_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
+
